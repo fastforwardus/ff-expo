@@ -356,7 +356,7 @@ export default function App() {
           {formStep === 1 && (
             <div style={{display:'flex', flexDirection:'column', gap:16}}>
               <div style={{fontFamily:"'Syne',sans-serif", fontWeight:800, fontSize:20, marginBottom:4}}>Datos de contacto</div>
-              <div><label style={s.label}>Nombre *</label><input style={s.input} value={f.name} onChange={e => set('name', e.target.value)} placeholder="Nombre completo" /></div>
+              <div><label style={s.label}>Nombre completo *</label><input style={s.input} value={f.name} onChange={e => set('name', e.target.value)} placeholder="Nombre completo" /></div>
               <div><label style={s.label}>Email</label><input style={s.input} type="email" value={f.email} onChange={e => set('email', e.target.value)} placeholder="email@empresa.com" /></div>
               <div><label style={s.label}>WhatsApp</label><input style={s.input} type="tel" value={f.whatsapp} onChange={e => set('whatsapp', e.target.value)} placeholder="+1 234 567 8900" /></div>
               <div><label style={s.label}>País</label>
