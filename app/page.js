@@ -47,7 +47,7 @@ export default function App() {
   const [newExpoLocation, setNewExpoLocation] = useState('')
   const [expos, setExpos] = useState([])
   const [adminTab, setAdminTab] = useState('leads')
-  const [form, setForm] = useState({ name:'', email:'', whatsapp:'', country:'', interest:'', exports_today:null, has_fda:null, score:'', notes:'' })
+  const [form, setForm] = useState({ name:'', email:'', whatsapp:'', country:'', company:'', interest:'', exports_today:null, has_fda:null, score:'', notes:'' })
   const [formStep, setFormStep] = useState(1)
   const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
@@ -168,7 +168,7 @@ export default function App() {
 
   function logout() {
     setVendor(null); setLeads([]); setScreen('login')
-    setForm({ name:'', email:'', whatsapp:'', country:'', interest:'', exports_today:null, has_fda:null, score:'', notes:'' })
+    setForm({ name:'', email:'', whatsapp:'', country:'', company:'', interest:'', exports_today:null, has_fda:null, score:'', notes:'' })
     setFormStep(1)
   }
 
@@ -190,7 +190,7 @@ export default function App() {
       } catch {}
     }
     setSaving(false); setSaved(true)
-    setTimeout(() => { setSaved(false); setForm({ name:'', email:'', whatsapp:'', country:'', interest:'', exports_today:null, has_fda:null, score:'', notes:'' }); setFormStep(1); loadLeads(); setScreen('home') }, 1500)
+    setTimeout(() => { setSaved(false); setForm({ name:'', email:'', whatsapp:'', country:'', company:'', interest:'', exports_today:null, has_fda:null, score:'', notes:'' }); setFormStep(1); loadLeads(); setScreen('home') }, 1500)
   }
 
   const pendingSync = getLocalLeads().filter(l => !l.synced).length
@@ -357,8 +357,8 @@ export default function App() {
             <div style={{display:'flex', flexDirection:'column', gap:16}}>
               <div style={{fontFamily:"'Syne',sans-serif", fontWeight:800, fontSize:20, marginBottom:4}}>Datos de contacto</div>
               <div><label style={s.label}>Nombre completo *</label><input style={s.input} value={f.name} onChange={e => set('name', e.target.value)} placeholder="Nombre completo" /></div>
-              <div><label style={s.label}>Email</label><input style={s.input} type="email" value={f.email} onChange={e => set('email', e.target.value)} placeholder="email@empresa.com" /></div>
-              <div><label style={s.label}>WhatsApp</label><input style={s.input} type="tel" value={f.whatsapp} onChange={e => set('whatsapp', e.target.value)} placeholder="+1 234 567 8900" /></div>
+              <div><label style={s.label}>Empresa</label><input style={s.input} value={f.company} onChange={e => set('company', e.target.value)} placeholder="Nombre de la empresa" /></div><div><label style={s.label}>Email</label><input style={s.input} type="email" value={f.email} onChange={e => set('email', e.target.value)} placeholder="email@empresa.com" /></div>
+              <div><label style={s.label}>WhatsApp</label><input style={s.input} type="tel" value={f.whatsapp} onChange={e => set('whatsapp', e.target.value)} placeholder="WhatsApp / Teléfono" /></div>
               <div><label style={s.label}>País</label>
                 <select style={{...s.input, appearance:'none'}} value={f.country} onChange={e => set('country', e.target.value)}>
                   <option value="">Seleccioná...</option>
