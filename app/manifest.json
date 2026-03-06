@@ -1,0 +1,21 @@
+{
+  "name": "FF Expo",
+  "short_name": "FF Expo",
+  "description": "FastForward Expo Lead Capture",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0c1e",
+  "theme_color": "#0a0c1e",
+  "icons": [
+    {
+      "src": "https://fastfwdus.com/wp-content/uploads/2025/03/fastforward-logo.png.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://fastfwdus.com/wp-content/uploads/2025/03/fastforward-logo.png.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
